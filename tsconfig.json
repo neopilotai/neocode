@@ -1,5 +1,56 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@tsconfig/bun/tsconfig.json",
-  "compilerOptions": {}
+  "compilerOptions": {
+    // Strictness - Core type safety
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    
+    // Safety - Prevent subtle bugs
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    
+    // Module Resolution - Consistent module handling
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    
+    // Path Aliases - Shared across all packages
+    "baseUrl": ".",
+    "paths": {
+      "@neocode/*": ["packages/*/src"],
+      "@neocode-ai/*": ["packages/*/src"],
+      "@console/*": ["packages/console/*/src"],
+      "@sdk/*": ["packages/sdk/*/src"],
+      "@plugin/*": ["packages/plugin/*/src"],
+      "@script/*": ["packages/script/*/src"],
+      "@util/*": ["packages/util/*/src"]
+    },
+    
+    // Output - Declaration files and source maps
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Library behavior
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["packages/**/*.ts", "packages/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "build", "coverage", "**/*.test.ts"]
 }

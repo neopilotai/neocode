@@ -80,6 +80,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "12.6.12",
     "@aws-sdk/client-s3": "3.933.0",
+    "@eslint/js": "9.39.2",
     "@isaacs/brace-expansion": "5.0.1",
     "@modelcontextprotocol/sdk": "1.26.0",
     "@neocode-ai/plugin": "workspace:*",
@@ -89,6 +90,7 @@
     "astro": "5.17.1",
     "esbuild": "0.27.2",
     "fast-xml-parser": "5.3.4",
+    "globals": "17.3.0",
     "hono": "4.11.7",
     "react-router": "7.13.0",
     "seroval": "1.5.0",
