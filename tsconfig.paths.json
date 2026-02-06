@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      // Core CLI & TUI
+      "@neocode/cli": ["packages/neocode/src/cli/index.ts"],
+      "@neocode/tui": ["packages/neocode/src/cli/cmd/tui/index.ts"],
+      "@neocode/core": ["packages/neocode/src/core/index.ts"],
+      
+      // Console - Core & App
+      "@console/core": ["packages/console/core/src/index.ts"],
+      "@console/app": ["packages/console/app/src/index.ts"],
+      "@console/types": ["packages/console/core/src/types/index.ts"],
+      "@console/hooks": ["packages/console/app/src/hooks/index.ts"],
+      "@console/components": ["packages/console/app/src/components/index.ts"],
+      
+      // Utilities
+      "@util/error": ["packages/util/src/error/index.ts"],
+      "@util/log": ["packages/util/src/log/index.ts"],
+      "@util/validation": ["packages/util/src/validation/index.ts"],
+      "@util/types": ["packages/util/src/types/index.ts"],
+      
+      // App/Web (public interfaces)
+      "@app/api": ["packages/app/src/api/index.ts"],
+      "@app/types": ["packages/app/src/types/index.ts"],
+      "@web/config": ["packages/web/src/config/index.ts"],
+      
+      // Wildcard for package internals (only for internal use - discouraged)
+      "@neocode-ai/*": ["packages/*/src"],
+      "@console/*": ["packages/console/*/src"],
+      "@sdk/*": ["packages/sdk/*/src"]
+    }
+  }
+}
