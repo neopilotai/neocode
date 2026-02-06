@@ -79,6 +79,31 @@ export default [
         { allowConstantLoopConditions: true },
       ],
 
+      // Import boundary rules - Enforce module boundaries
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["@neocode/*/src/**", "@neocode/*/internal/**"],
+              message: "Internal modules cannot be imported directly. Use public API exports instead.",
+            },
+            {
+              group: ["@console/*/src/**", "@console/*/internal/**"],
+              message: "Internal modules cannot be imported directly. Use public API exports instead.",
+            },
+            {
+              group: ["packages/*/src/**"],
+              message: "Import packages using path aliases (e.g., @neocode/core) not relative paths.",
+            },
+            {
+              group: ["../../../packages/**"],
+              message: "Deep relative imports not allowed. Use path aliases instead.",
+            },
+          ],
+        },
+      ],
+
       // Core JavaScript rules
       "no-console": ["warn", { allow: ["warn", "error", "info"] }],
       "no-debugger": "error",

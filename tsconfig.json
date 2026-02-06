@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@tsconfig/bun/tsconfig.json",
+  "extends": ["@tsconfig/bun/tsconfig.json", "./tsconfig.paths.json"],
   "compilerOptions": {
     // Strictness - Core type safety
     "strict": true,
@@ -26,18 +26,6 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    
-    // Path Aliases - Shared across all packages
-    "baseUrl": ".",
-    "paths": {
-      "@neocode/*": ["packages/*/src"],
-      "@neocode-ai/*": ["packages/*/src"],
-      "@console/*": ["packages/console/*/src"],
-      "@sdk/*": ["packages/sdk/*/src"],
-      "@plugin/*": ["packages/plugin/*/src"],
-      "@script/*": ["packages/script/*/src"],
-      "@util/*": ["packages/util/*/src"]
-    },
     
     // Output - Declaration files and source maps
     "target": "ES2022",
